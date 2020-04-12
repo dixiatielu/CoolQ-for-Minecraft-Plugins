@@ -1,20 +1,13 @@
-#Nonebot plugin
-#AutoWhiteList
-#__init__.py
-#Author:dixiatielu
+# Nonebot plugin
+# AutoWhiteList
+# data_source.py
+# Author:dixiatielu
 
 from mcrcon import MCRcon
 
-#服务器地址
-HOST = ''
-#Rcon的端口
-PORT = 25564
-#Rcon的密码
-RCON_PWD = ''
-
-async def get_whitelist(uid: str) -> str:
+async def get_whitelist(uid: str, HOST: str, PORT: int, RCON_PWD: str) -> str:
     with MCRcon(host=HOST, port=PORT, password=RCON_PWD) as rcon:
-        res = rcon.command('whitelist add '+uid)
+        res = rcon.command('whitelist add ' + uid)
     if res == 'Player is already whitelisted':
         tip = '您在服务器上已经有白名单了，无需再次添加'
     elif res == 'That player does not exist':
