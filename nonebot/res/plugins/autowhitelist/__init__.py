@@ -8,6 +8,14 @@ from nonebot import on_natural_language, NLPSession, IntentCommand
 
 from .data_source import get_whitelist
 
+__plugin_name__ = '自动白名单'
+__plugin_usage__ = r'''
+自动白名单
+
+含有自然语言处理功能
+用你最自然的语言，让我为你加上Minecraft服务器的白名单吧！
+'''
+
 @on_command('wl', aliases=('白名', '白名单', '加白名单', '添加白名单', '加个白名单'))
 async def wl(session: CommandSession):
 
